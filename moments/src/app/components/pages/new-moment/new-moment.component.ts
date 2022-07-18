@@ -22,7 +22,7 @@ export class NewMomentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async CreateHandler(moment: Moment){
+  async createHandler(moment: Moment){
     const formData = new FormData();
 
     formData.append('title', moment.title);
