@@ -75,6 +75,13 @@ export class MomentComponent implements OnInit {
 
     data.momentId = Number(this.moment!.id)
 
-    await this.commentService.createComment(data).subscribe((comment) => this.moment!.comments!.push(comment.data))
+    await this.commentService.createComment(data).subscribe((comment) => this.moment!.comments!.push(comment.data));
+
+    this.messagesService.add("Comentário adicionado!");
+
+    //reseta o form
+    this.commentForm.reset();
+
+    formDirective.resetForm();
   }
 }
